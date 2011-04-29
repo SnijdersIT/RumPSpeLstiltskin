@@ -1,0 +1,5 @@
+
+    - create generic data files which hold prefixes
+    - export to fltr-sets that can be used in RPSL style
+    - provide scripts to generate config for cisco / juniper etc
+
