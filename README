@@ -10,6 +10,10 @@ The main differences between Gert's page and this repository are:
     - IPv4 also covered
     - Known IXP Peering LANs are included
 
+See ipv4-prefix-list.txt for the IPv4 list
+See ipv6-prefix-list.txt for the IPv6 list
+
+I would really appriciate comments and contributions!
 
 Job Snijders
 job@snijders-it.nl

@@ -1,0 +1,37 @@
+! block RFC1918 space
+ip prefix-list incoming-v4 deny 10.0.0.0/8 le 32
+ip prefix-list incoming-v4 deny 172.16.0.0/12 le 32
+ip prefix-list incoming-v4 deny 192.168.0.0/16 le 32
+
+! block RFC5737 documentation prefixes
+ip prefix-list incoming-v4 deny 192.0.2.0/24 le 32
+ip prefix-list incoming-v4 deny 198.51.100.0/24 le 32
+ip prefix-list incoming-v4 deny 203.0.113.0/24 le 32
+
+! block special ipv6 loopback prefix
+ip prefix-list incoming-v4 deny 127.0.0.0/8 le 32
+
+! block link local
+ip prefix-list incoming-v4 deny 169.254.0.0/16 le 32
+
+! block stuff smaller than /24 (ymmv)
+ip prefix-list incoming-v4 deny 0.0.0.0/0 ge 25
+
+! block bigger than /5
+ip prefix-list incoming-v4 deny 0.0.0.0/0 le 5
+
+! block default route (this is the DFZ afterall)
+ip prefix-list incoming-v4 deny 0.0.0.0/0
+
+! block AMSIX Peering LAN http://www.ams-ix.net/
+ip prefix-list incoming-v4 deny 195.69.144.0/22 le 32
+
+! block DECIX Peering LAN http://www.decix.net/
+ip prefix-list incoming-v4 deny 80.81.192.0/22 le 32
+
+! block NLIX Peering LAN http://www.nlix.net/
+ip prefix-list incoming-v4 deny 193.239.116.0/23 le 32
+
+! allow anything that does not match the above
+ip prefix-list incoming-v4 permit 0.0.0.0/0 le 32
+
