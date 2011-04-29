@@ -1,0 +1,11 @@
+This collection is meant to give some recommedations for network operators
+regarding BGP standard bgp filters on eBGP and iBGP sessions. This list
+can help to prevent incidents if people announce RFC1918 space or 
+more-specifics from Peering LANS
+
+It is inspired by Gert's page: 
+    http://www.space.net/~gert/RIPE/ipv6-filters.html
+
+The main differences between Gert's page and this repository are:
+    - IPv4 also covered
+    - Known IXP Peering LANs are included
