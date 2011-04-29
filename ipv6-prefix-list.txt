@@ -31,6 +31,10 @@ ipv6 prefix-list incoming-v6 deny 2001:7f8:1::/48 le 128
 ipv6 prefix-list incoming-v6 permit 2001:7f8:13::/48 
 ipv6 prefix-list incoming-v6 deny 2001:7f8:13::/48 le 128
 
+! LINX Peering LANs
+ipv6 prefix-list incoming-v6 permit 2001:7f8:4::/48 
+ipv6 prefix-list incoming-v6 deny 2001:7f8:4::/48 le 128
+
 ! allow for currently assigned unicast space
 ipv6 prefix-list incoming-v6 permit 2000::/3 le 48
 

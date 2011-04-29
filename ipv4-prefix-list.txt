@@ -32,6 +32,12 @@ ip prefix-list incoming-v4 deny 80.81.192.0/22 le 32
 ! block NLIX Peering LAN http://www.nlix.net/
 ip prefix-list incoming-v4 deny 193.239.116.0/23 le 32
 
+! block LINX Peering LANs http://www.linx.net/
+ip prefix-list incoming-v4 deny 195.66.224.0/22 le 32
+
+! block Equinix Ashburn IX
+ip prefix-list incoming-v4 deny 206.223.115.0/24 le 32
+
 ! allow anything that does not match the above
 ip prefix-list incoming-v4 permit 0.0.0.0/0 le 32
 
