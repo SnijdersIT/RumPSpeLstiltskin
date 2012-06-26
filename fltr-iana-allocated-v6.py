@@ -6,7 +6,7 @@ configuration = { 'email_from': 'job@snijders-it.nl',
     'filtername': 'AS15562:fltr-iana-allocated-v6',
     'email_to': 'auto-dbm@ripe.net',
     'gpg_keyid': 'C46D1B1C',
-    'mnt_by': 'SNIJDERS-ROBOT-MNT',
+    'mnt_by': ('SNIJDERS-ROBOT-MNT', 'SNIJDERS-MNT')
     'admin_c': 'JWJS1-RIPE',
     'tech_c': 'JWJS1-RIPE',
     'org': 'ORG-SNIJ1-RIPE', 
@@ -115,6 +115,9 @@ descr: All IPv6 prefixes IANA has allocated to the RIRs
 mp-filter: {
     """
 
+for maintainer in configuration['mnt_by']:
+    maintainers += "mnt-by: " + maintainer
+
 footer = """ }
 remarks: last IANA update: """ + iana_stamp + """
 remarks: filter generated: """ + timestamp + """
@@ -123,7 +126,7 @@ remarks: this object is automatically updated the first day of every month
 org: """ + configuration['org'] + """
 tech-c: """ + configuration['tech_c'] + """
 admin-c: """ + configuration['admin_c'] + """
-mnt-by: """ + configuration['mnt_by'] + """
+""" + maintainers + """
 changed: """ + configuration['email_from'] + """
 source: RIPE"""
 
