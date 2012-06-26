@@ -130,7 +130,7 @@ source: RIPE"""
 rpslobject = header + formatted_prefixes + footer
 
 # sign with PGPKEY-C46D1B1C on irime
-gpg = gnupg.GPG(gnupghome=configuration['gpg_homedir')
+gpg = gnupg.GPG(gnupghome=configuration['gpg_homedir'])
 try:
     signed_rpslobject = str(gpg.sign(rpslobject,keyid=configuration['gpg_keyid'],clearsign=True))
     print "pass: signed the new object"
