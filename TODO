@@ -1,5 +1,6 @@
 
-    - create generic data files which hold prefixes
-    - export to fltr-sets that can be used in RPSL style
-    - provide scripts to generate config for cisco / juniper etc
+- use whois to check if the object has been parsed correctly
+- use some rpslconfigcheck tool to validate the resulting code
+- create generic data files which hold prefixes
+- provide scripts to generate config for cisco / juniper etc
 

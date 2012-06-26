@@ -1,0 +1,11 @@
+0000::/8^+,      # loopback, unspecified, v4-mapped
+0200::/7^+,      # Reserved by IETF [RFC4048]
+2001::/32^-,     # Teredo prefix [RFC4380]
+2001:db8::/32^+, # NON-ROUTABLE range to be used for documentation purpose [RFC3849]
+2002::/16^-,     # 6to4 prefix [RFC3068]
+3ffe::/16^+,     # used for the 6bone but was returned [RFC5156]
+5f00::/8^+,      # used for the 6bone but was returned [RFC5156]
+fc00::/7^+,      # Unique Local Unicast [RFC4193]
+fe80::/10^+,     # Link Local Unicast [RFC4291]
+fec0::/10^+,     # Reserved by IETF [RFC3879]
+ff00::/8^+       # Multicast [RFC4291]

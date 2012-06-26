@@ -1,17 +1,23 @@
 This collection is meant to give some recommedations for network operators
-regarding BGP standard bgp filters on eBGP and iBGP sessions. This list
-can help to prevent incidents if people announce RFC1918 space or 
-more-specifics from Peering LANS
+regarding BGP standard bgp filters on eBGP and iBGP sessions. These scripts
+can generate RPSL objects which can be used by rtconfig or rpsltool to create
+prefix-lists which you deploy on your routers. 
 
 It is inspired by Gert's page: 
     http://www.space.net/~gert/RIPE/ipv6-filters.html
 
-The main differences between Gert's page and this repository are:
-    - IPv4 also covered
-    - Known IXP Peering LANs are included
+Currently three filters can be created:
 
-See ipv4-prefix-list.txt for the IPv4 list
-See ipv6-prefix-list.txt for the IPv6 list
+    - IPv6 Martian prefixes (example: fltr-martian-v6)
+    - IPv6 Full Bogons list (example: fltr-bogons-v6)
+    - IANA Allocated IPv6 prefixes (example: fltr-iana-allocated-v6)
+
+The martian filter is a maintained by hand. It takes 'fltr-martian-v6.list' and
+creates a RPSL object. 
+
+The Full Bogons list is created based on data from Cymru.
+
+The IANA Allocated IPv6 Prefixes list is created based on data from IANA.
 
 I would really appriciate comments and contributions!
 
