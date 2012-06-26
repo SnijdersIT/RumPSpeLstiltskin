@@ -1,4 +1,9 @@
 
+- make some kind of centralized configuration file
+    - email addresses
+    - pgp configuration
+    - object names and autnum names
+
 - use whois to check if the object has been parsed correctly
 - use some rpslconfigcheck tool to validate the resulting code
 - create generic data files which hold prefixes
