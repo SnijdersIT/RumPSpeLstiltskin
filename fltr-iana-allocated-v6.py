@@ -1,6 +1,16 @@
 #!/usr/bin/python 
-# IPv6 bogons RPSL object updater
+# IPv6 RPSL object updater
 # Written by Job Snijders <job@snijders-it.nl> in June 2012
+
+configuration = { 'email_from': 'job@snijders-it.nl',
+    'filtername': 'AS15562:fltr-iana-allocated-v6',
+    'email_to': 'auto-dbm@ripe.net',
+    'gpg_keyid': 'C46D1B1C',
+    'mnt_by': 'SNIJDERS-ROBOT-MNT',
+    'admin_c': 'JWJS1-RIPE',
+    'tech_c': 'JWJS1-RIPE',
+    'org': 'ORG-SNIJ1-RIPE', 
+    'gpg_homedir': '/home/job/.gnupg' }
 
 import sys
 import urllib2
@@ -16,7 +26,6 @@ from email.mime.text import MIMEText
 # whois code: http://code.activestate.com/recipes/577364-whois-client/
 
 
-# download: www.team-cymru.org/Services/Bogons/fullbogons-ipv6.txt
 print "+--------------------------------------------------------------------------+"
 print "+ IPv6 IANA Allocated updater:"
 print """+ This program will attempt to fetch up2date allocations list from IANA,
@@ -99,7 +108,7 @@ for filter_entry in valid_prefixes:
  
 # construct object
 # RPSL object: 
-header = """filter-set: fltr-iana-allocated-v6
+header = """filter-set: """ + configuration['filtername'] + """
 descr: All IPv6 prefixes IANA has allocated to the RIRs
 mp-filter: {
     """
@@ -109,20 +118,19 @@ remarks: last IANA update: """ + iana_stamp + """
 remarks: filter generated: """ + timestamp + """
 remarks: source www.iana.org/assignments/ipv6-unicast-address-assignments/ipv6-unicast-address-assignments.xml
 remarks: this object is automatically updated the first day of every month
-org: ORG-SNIJ1-RIPE
-tech-c: JWJS1-RIPE
-admin-c: JWJS1-RIPE
-mnt-by: SNIJDERS-MNT
-mnt-by: SNIJDERS-ROBOT-MNT
-changed: job@snijders-it.nl
+org: """ + configuration['org'] + """
+tech-c: """ + configuration['tech_c'] + """
+admin-c: """ + configuration['admin_c'] + """
+mnt-by: """ + configuration['mnt_by'] + """
+changed: """ + configuration['email_from'] + """
 source: RIPE"""
 
 rpslobject = header + formatted_prefixes + footer
 
 # sign with PGPKEY-C46D1B1C on irime
-gpg = gnupg.GPG(gnupghome='/home/job/.gnupg')
+gpg = gnupg.GPG(gnupghome=configuration['gpg_homedir')
 try:
-    signed_rpslobject = str(gpg.sign(rpslobject,keyid='C46D1B1C',clearsign=True))
+    signed_rpslobject = str(gpg.sign(rpslobject,keyid=configuration['gpg_keyid'],clearsign=True))
     print "pass: signed the new object"
 except:
     print "error: something went wrong with signing"
@@ -131,12 +139,12 @@ except:
 # email to auto-dbm@ripe.net
 msg = MIMEText(signed_rpslobject, 'plain')
 msg['Subject'] = 'IPv6 Bogons: %s' % timestamp
-msg['From'] = 'job@snijders-it.nl'
-msg['To'] = 'auto-dbm@ripe.net'
+msg['From'] = configuration['email_from']
+msg['To'] = configuration['email_to']
 s = smtplib.SMTP('localhost')
 try:
     print signed_rpslobject
-    s.sendmail('job@snijders-it.nl', 'auto-dbm@ripe.net', msg.as_string())
+    s.sendmail(configuration['email_from'], configuration['email_to'], msg.as_string())
     s.quit()
     print "pass: sent the email succesfully to the MTA"
     print "done: a new version has been uploaded"
