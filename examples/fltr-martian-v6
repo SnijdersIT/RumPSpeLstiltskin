@@ -1,0 +1,64 @@
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See http://www.ripe.net/db/support/db-terms-conditions.pdf
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to 'fltr-martian-v6'
+
+filter-set:      fltr-martian-v6
+descr:           Current IPv6 martians
+mp-filter:       {
+          0000::/8^+,      # loopback, unspecified, v4-mapped
+          0200::/7^+,      # Reserved by IETF [RFC4048]
+          2001::/32^-,     # Teredo prefix [RFC4380]
+          2001:db8::/32^+, # NON-ROUTABLE range to be used for documentation purpose [RFC3849]
+          2002::/16^-,     # 6to4 prefix [RFC3068]
+          3ffe::/16^+,     # used for the 6bone but was returned [RFC5156]
+          5f00::/8^+,      # used for the 6bone but was returned [RFC5156]
+          fc00::/7^+,      # Unique Local Unicast [RFC4193]
+          fe80::/10^+,     # Link Local Unicast [RFC4291]
+          fec0::/10^+,     # Reserved by IETF [RFC3879]
+          ff00::/8^+       # Multicast [RFC4291]
+          }
+remarks:         timestamp: 1340624990 - 2012-06-25 11:49:50.795587+00:00
+remarks:         the following sources have been used:
+            www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xml
+            www.iana.org/assignments/ipv6-unicast-address-assignments/ipv6-unicast-address-assignments.xml
+remarks:         this object is manually maintained
+org:             ORG-SNIJ1-RIPE
+tech-c:          JWJS1-RIPE
+admin-c:         JWJS1-RIPE
+mnt-by:          SNIJDERS-MNT
+mnt-by:          SNIJDERS-ROBOT-MNT
+source:          RIPE # Filtered
+
+organisation:    ORG-SNIJ1-RIPE
+org-name:        Job Snijders
+remarks:         trading as Snijders IT
+remarks:         trading as Prefix Servers
+remarks:         trading as Meerval Networks
+org-type:        OTHER
+address:         Theodorus Majofskistraat 100
+address:         1065 SZ Amsterdam
+address:         Netherlands
+mnt-ref:         SNIJDERS-MNT
+mnt-by:          SNIJDERS-MNT
+abuse-mailbox:   job@snijders-it.nl
+source:          RIPE # Filtered
+
+person:          Job W. J. Snijders
+address:         Theodorus Majofskistraat 100
+address:         1065 SZ Amsterdam
+address:         The Netherlands
+remarks:         PGP key is PGPKEY-7E5BEC10
+phone:           +31-6-54942365
+nic-hdl:         JWJS1-RIPE
+mnt-by:          SNIJDERS-MNT
+source:          RIPE # Filtered
+
+% This query was served by the RIPE Database Query Service version 1.12.4 (WHOIS1)
+

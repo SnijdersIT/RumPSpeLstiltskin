@@ -1,0 +1,89 @@
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See http://www.ripe.net/db/support/db-terms-conditions.pdf
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to 'fltr-iana-allocated-v6'
+
+filter-set:      fltr-iana-allocated-v6
+descr:           All IPv6 prefixes IANA has allocated to the RIRs
+mp-filter:       {
+    	      2001:0000::/23^16-48,	# IANA - 1999-07-01
+	      2001:0200::/23^16-48,	# APNIC - 1999-07-01
+	      2001:0400::/23^16-48,	# ARIN - 1999-07-01
+	      2001:0600::/23^16-48,	# RIPE NCC - 1999-07-01
+	      2001:0800::/23^16-48,	# RIPE NCC - 2002-05-02
+	      2001:0A00::/23^16-48,	# RIPE NCC - 2002-11-02
+	      2001:0C00::/23^16-48,	# APNIC - 2002-05-02
+	      2001:0E00::/23^16-48,	# APNIC - 2003-01-01
+	      2001:1200::/23^16-48,	# LACNIC - 2002-11-01
+	      2001:1400::/23^16-48,	# RIPE NCC - 2003-02-01
+	      2001:1600::/23^16-48,	# RIPE NCC - 2003-07-01
+	      2001:1800::/23^16-48,	# ARIN - 2003-04-01
+	      2001:1A00::/23^16-48,	# RIPE NCC - 2004-01-01
+	      2001:1C00::/22^16-48,	# RIPE NCC - 2001-05-04
+	      2001:2000::/20^16-48,	# RIPE NCC - 2001-05-04
+	      2001:3000::/21^16-48,	# RIPE NCC - 2001-05-04
+	      2001:3800::/22^16-48,	# RIPE NCC - 2001-05-04
+	      2001:4000::/23^16-48,	# RIPE NCC - 2004-06-11
+	      2001:4200::/23^16-48,	# AfriNIC - 2004-06-01
+	      2001:4400::/23^16-48,	# APNIC - 2004-06-11
+	      2001:4600::/23^16-48,	# RIPE NCC - 2004-08-17
+	      2001:4800::/23^16-48,	# ARIN - 2004-08-24
+	      2001:4A00::/23^16-48,	# RIPE NCC - 2004-10-15
+	      2001:4C00::/23^16-48,	# RIPE NCC - 2004-12-17
+	      2001:5000::/20^16-48,	# RIPE NCC - 2004-09-10
+	      2001:8000::/19^16-48,	# APNIC - 2004-11-30
+	      2001:A000::/20^16-48,	# APNIC - 2004-11-30
+	      2001:B000::/20^16-48,	# APNIC - 2006-03-08
+	      2002:0000::/16^16-48,	# 6to4 - 2001-02-01
+	      2003:0000::/18^16-48,	# RIPE NCC - 2005-01-12
+	      2400:0000::/12^16-48,	# APNIC - 2006-10-03
+	      2600:0000::/12^16-48,	# ARIN - 2006-10-03
+	      2610:0000::/23^16-48,	# ARIN - 2005-11-17
+	      2620:0000::/23^16-48,	# ARIN - 2006-09-12
+	      2800:0000::/12^16-48,	# LACNIC - 2006-10-03
+	      2A00:0000::/12^16-48,	# RIPE NCC - 2006-10-03
+	      2C00:0000::/12^16-48	# AfriNIC - 2006-10-03
+       }
+remarks:         last IANA update: 2012-05-30
+remarks:         filter generated: 1340704624 - 2012-06-26 09:57:04.746342+00:00
+remarks:         source www.iana.org/assignments/ipv6-unicast-address-assignments/ipv6-unicast-address-assignments.xml
+remarks:         this object is automatically updated the first day of every month
+org:             ORG-SNIJ1-RIPE
+tech-c:          JWJS1-RIPE
+admin-c:         JWJS1-RIPE
+mnt-by:          SNIJDERS-ROBOT-MNT
+mnt-by:          SNIJDERS-MNT
+source:          RIPE # Filtered
+
+organisation:    ORG-SNIJ1-RIPE
+org-name:        Job Snijders
+remarks:         trading as Snijders IT
+remarks:         trading as Prefix Servers
+remarks:         trading as Meerval Networks
+org-type:        OTHER
+address:         Theodorus Majofskistraat 100
+address:         1065 SZ Amsterdam
+address:         Netherlands
+mnt-ref:         SNIJDERS-MNT
+mnt-by:          SNIJDERS-MNT
+abuse-mailbox:   job@snijders-it.nl
+source:          RIPE # Filtered
+
+person:          Job W. J. Snijders
+address:         Theodorus Majofskistraat 100
+address:         1065 SZ Amsterdam
+address:         The Netherlands
+remarks:         PGP key is PGPKEY-7E5BEC10
+phone:           +31-6-54942365
+nic-hdl:         JWJS1-RIPE
+mnt-by:          SNIJDERS-MNT
+source:          RIPE # Filtered
+
+% This query was served by the RIPE Database Query Service version 1.12.4 (WHOIS1)
+
