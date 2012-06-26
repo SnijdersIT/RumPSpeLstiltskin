@@ -95,7 +95,9 @@ else:
     print "error: the list seems corrupt, 2001:4600::/23 is missing"
     sys.exit(1)
 
-# get last entry and remove the comma
+# loop through all the valid entries
+# add some RPSL suger (we accept up to /16 and no smaller than /48)
+# make sure the last entry doesn't end with a comma
 formatted_prefixes = str()
 networksize = "^16-48"
 for filter_entry in valid_prefixes:
